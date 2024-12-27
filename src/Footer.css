@@ -1,0 +1,23 @@
+#footer {
+    background-color: #FB8B24;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+  
+#footer ul {
+    display: flex;
+    list-style: none;
+    color: white;
+    gap: 20px;
+    font-size: 18px;
+    padding-left: 0;
+}
+
+#footer p {
+    text-align: center;
+    font-size: 12px;
+}
+
