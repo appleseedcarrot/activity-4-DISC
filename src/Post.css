@@ -1,0 +1,32 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-left: 100px;
+}
+
+.post-image {
+    background-color: rgb(196, 196, 196);
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+    align-self: center;
+}
+
+.post-filters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0px;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.post-filters p {
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.1);
+    line-height: 30px;
+    font-size: .8em;
+    padding-left: 10px;
+    padding-right: 10px;
+}

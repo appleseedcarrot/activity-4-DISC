@@ -1,0 +1,73 @@
+#option-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-bottom: 50px;
+}
+
+#filter {
+    min-width: 50%;
+    display: flex;
+}
+
+#filter p {
+    margin-right: -30px;
+    font-size: .8em;
+    align-self: center;
+}
+
+#filter ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+button.inactive-filter {
+    background-color:rgba(0, 0, 0, 0.1);
+    color: black;
+    font-size: .8em;
+}
+
+button.inactive-filter:hover {
+    background-color: #0F62FE;
+    color: white;
+}
+
+button.active-filter {
+    background-color: #0F62FE;
+    color: white;
+    font-size: .8em;
+}
+
+button.active-filter:hover {
+    background-color: #0f63feb8;
+    color: white;
+}
+
+#options-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#options-right button:hover {
+    border-radius: 10px;
+    color: white;
+}
+
+#sort {
+    color: black;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+#create-post-button {
+    background-color: #0F62FE;
+    height: 3em;
+    width: 13em;
+    font-weight: bolder;
+    border-radius: 0px;
+}
