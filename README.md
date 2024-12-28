@@ -4,7 +4,7 @@ The page I created for this assignment is the explore page where users will be a
 
 # What's working
 
-As of now, the basic format of the site is setup and you can actually click on filters to select posts that are of that genre of rooms. I have made some example posts just to showcase this function.
+As of now, the basic format of the site is setup and you can actually click on filters to select posts that are of that genre of rooms. I have made some example posts just to showcase this function. You can select multiple filters
 
 # What's not working
 You can not sort or create a new post yet.
