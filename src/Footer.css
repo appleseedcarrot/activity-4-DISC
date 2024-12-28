@@ -16,8 +16,17 @@
     padding-left: 0;
 }
 
+#footer ul li a {
+    color: white;
+}
+
+#footer ul li a:hover {
+    color: black;
+}
+
 #footer p {
     text-align: center;
     font-size: 12px;
+    color: white;
 }
 
