@@ -68,12 +68,12 @@ function OptionBar({toggleFilter, filters}) {
   );
 }
 
-function Post() {
+function Post({filter}) {
 
   return (
     <div class="post">
       <div class="post-image"> </div>
-      <div class="post-filters"> <p> Gaming </p> </div>
+      <div class="post-filters"> <p> {filter} </p> </div>
     </div>
   );
 }
@@ -138,7 +138,14 @@ function App() {
       <Nav> </Nav>
       <h1> Explore </h1>
       <OptionBar toggleFilter={toggleFilter} filters={filters}> </OptionBar>
-      <Post> </Post>
+      <div id='postGrid'>
+        {filteredPosts.map((listing) => {
+          return (
+            <Post filter={listing.category}> </Post>
+          )
+        })
+      }
+      </div>
       <Footer> </Footer>
     </>
   );
