@@ -22,7 +22,7 @@ export default function UsersSummary() {
         <div className={'users-summary'}>
             <h1 className={'user-heading'}> Users </h1>
             <div className={'user-brief'}>
-            {Users.map((user) => {
+            {Users.slice(0,5).map((user) => {
                 return (
                     <Link to={'/users/' + user.id}>
                         <div className={'user'}>
