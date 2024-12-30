@@ -1,0 +1,68 @@
+.homescreen {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+  }
+  
+  .homescreen-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    min-width: 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+  }
+  
+  #find-heading {
+    color: #D90368;
+  }
+
+  .homescreen-left p {
+    font-size: small;
+  }
+
+  .homescreen-left ul {
+    list-style: none;
+    line-height: 20px;
+  }
+  
+  .homescreen-left-elements li{
+    margin-top: 5px;
+  }
+  
+  .create-profile {
+    background-color: #0F62FE;
+    width: 175px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 600px;
+    height: 100%;
+  }
+  
+  .image-container img {
+    position: absolute;
+    width: 350px;
+    border-radius: 10px;
+  }
+  
+  .top-image {
+    top: 0;
+    left: 20px;
+    z-index: 2;
+  }
+  
+  .bottom-image {
+    bottom: 0;
+    right: 10px;
+    z-index: 1;
+  }
