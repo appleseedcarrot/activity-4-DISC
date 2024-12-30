@@ -1,7 +1,13 @@
-#explore-page {
+#recent-posts {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.recent-posts h1 {
+  text-align: left;
+  margin-left: 200px;
+  margin-bottom: 20px;
 }
 
 #postGrid {

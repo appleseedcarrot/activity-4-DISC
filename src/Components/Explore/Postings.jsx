@@ -58,7 +58,8 @@ export default function Postings() {
     );
 
     return (
-        <div id="explore-page"> 
+        <div className={"recent-posts"}> 
+            <h1> Recent Posts </h1>
             <OptionBar toggleFilter={toggleFilter} filters={filters}> </OptionBar>
             <div id='postGrid'>
             {filteredPosts.map((listing) => {
