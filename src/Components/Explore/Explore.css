@@ -1,0 +1,15 @@
+#explore-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#postGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-content: center;
+    margin-left: 190px;
+  }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import OptionBar from './OptionBar.jsx'
 import Post from './Post.jsx'
+import './Explore.css'
 
 export default function Explore() {
   // Filters
@@ -59,14 +60,16 @@ export default function Explore() {
   return (
     <>
     <h1> Explore </h1>
-    <OptionBar toggleFilter={toggleFilter} filters={filters}> </OptionBar>
-    <div id='postGrid'>
-      {filteredPosts.map((listing) => {
-        return (
-          <Post filter={listing.category}> </Post>
-        )
-      })
-    }
+    <div id="explore-page"> 
+      <OptionBar toggleFilter={toggleFilter} filters={filters}> </OptionBar>
+      <div id='postGrid'>
+        {filteredPosts.map((listing) => {
+          return (
+            <Post filter={listing.category}> </Post>
+          )
+        })
+      }
+      </div>
     </div>
     </>
   );

@@ -5,10 +5,3 @@
   text-align: center;
   font-family: Arial;
 }
-
-#postGrid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-}
