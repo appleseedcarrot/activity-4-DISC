@@ -1,0 +1,11 @@
+.detailed-user {
+    margin-top: 50px;
+}
+
+.detailed-user img{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
