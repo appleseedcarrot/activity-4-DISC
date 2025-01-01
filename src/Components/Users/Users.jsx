@@ -30,7 +30,7 @@ export default function Users() {
             <div className={'users-all'}>
                 {Users.map((user) => {
                     return (
-                        <Link to={'/users/' + user.id}>
+                        <Link to={'/users/' + user.id} key={user.id}>
                             <div className={'user'}>
                                 <img src={user.profilepicture != null ? user.profilepicture : "https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png"} />
                                 <h2> {user.firstname} {user.lastname} </h2>

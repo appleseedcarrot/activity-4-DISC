@@ -27,7 +27,7 @@ export default function UsersSummary() {
                 ) : (
                 Users.slice(0,5).map((user) => {
                     return (
-                        <Link to={'/users/' + user.id}>
+                        <Link to={'/users/' + user.id} key={user.id}>
                             <div className={'user'}>
                                 <img src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png" />
                                 <h2> {user.firstname} {user.lastname} </h2>

@@ -67,7 +67,7 @@ export default function Postings() {
             <div id='postGrid'>
             {filteredPosts.map((listing) => {
                 return (
-                <Post filter={listing.category}> </Post>
+                <Post filter={listing.category} key={listing.id}> </Post>
                 )
             })
             }
