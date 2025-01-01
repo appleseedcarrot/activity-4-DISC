@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import OptionBar from './OptionBar.jsx'
 import Post from './Post.jsx'
 import './Explore.css'
@@ -6,8 +6,9 @@ import './Explore.css'
 export default function Postings() {
     // Filters
     const [filters, setFilters] = useState([]);
-    // Example Posts
-    const [allPosts, setallPosts] = useState([
+    // Example Posts => Changeed to useMemo only at the beginning so the posts are technically cached.
+    const posts = useMemo(() => {
+    return [
     { id: 1, category: 'Gaming'},
     { id: 2, category: 'Natural'},
     { id: 3, category: 'Modern'},
@@ -18,7 +19,8 @@ export default function Postings() {
     { id: 8, category: 'Futuristic'},
     { id: 9, category: 'Gaming'},
     { id: 10, category: 'Natural'},
-    ]);
+    ]
+        }, []);
     // The filtered posts
     const [filteredPosts, setFilteredPosts] = useState([allPosts]);
 
