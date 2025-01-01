@@ -1,14 +1,8 @@
-# Explore Page
+# Homework 5
 
-The page I created for this assignment is the explore page where users will be able to post their room setups for inspiration, for fun, and to meet new potential roommates. 
-
-# What's working
-
-- Everything from hw-4
-- Explore page now has a brief list of users with a button that takes you to another page with all the users
-- Clicking on a user brings them to their individual profile
-- You can now click on the Logo to go to a (new) homepage, same with the Explore link to navigate to the explore page.
-- Footer links do the same as above^.
-
-# What's not working
-You still can not sort or create a new post yet.
+- Added a new section in the Explore page where you can see a brief summary of the users. These users are being fetched from the database provided by DISC.
+- Didn't implement deleting, creating, or updating users -> Saving for later when we create our own database
+- Frontend fetches from the provided database routes. Only used the GET method but plan to add more later on when I understand it better.
+- Added two more new pages -> All users and detailed users pages. You can click on the see more users button in the explore page to see all the users. Clicking on any profile brings you to their detailed profile page.
+- Pages route to eachother using <Link> component. Nice
+- There's probably more but let me know if there are questions.
