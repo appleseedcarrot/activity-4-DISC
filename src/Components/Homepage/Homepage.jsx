@@ -1,4 +1,5 @@
 import './Homepage.css'
+import Button from '../Button.jsx'
 
 export default function Homepage() {
     
@@ -11,9 +12,17 @@ export default function Homepage() {
                 <li> <p>
                 The right roommate can be hard to find. With RoomBoard, you can find someone with similar living styles to you!
                 </p></li>
-                <li> <button className={"create-profile"}>
-                Create your Profile
-                </button></li>
+                <li> <Button label={'Create your Profile'} style={{
+                    backgroundColor: '#0F62FE',
+                    width: '175px',
+                    height: '40px',
+                    borderRadius: '10px',
+                    color: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }} />
+                </li>
                 </ul>
             </div>
             <div className={'image-container'}>
