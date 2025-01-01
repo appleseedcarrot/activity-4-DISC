@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import OptionBar from './OptionBar.jsx'
 import Post from './Post.jsx'
 import './Explore.css'
@@ -22,26 +22,27 @@ export default function Postings() {
     ]
         }, []);
     // The filtered posts
-    const [filteredPosts, setFilteredPosts] = useState([allPosts]);
+    const [filteredPosts, setFilteredPosts] = useState([posts]);
 
     // Toggle filters
-    const toggleFilter = (filter) => {
-    // Check if filter is selected
-    if (filters.includes(filter)) {
-        // Disable the filter by removing it from filters array
-        let newFilters = filters.filter((f) => f != filter);
-        setFilters(newFilters);
-    }
-    else {
-        setFilters([...filters, filter]);
-    }
-    }
+    const toggleFilter = useCallback((filter) => {
+        // Check if filter is selected
+        if (filters.includes(filter)) {
+            // Disable the filter by removing it from filters array
+            let newFilters = filters.filter((f) => f != filter);
+            setFilters(newFilters);
+        }
+        else {
+            // FILTER IS ADDED TO THE END OF THE ARRAY here...
+            setFilters([...filters, filter]);
+        }
+    });
 
     // Change which listings are shown based on filter
     useEffect(() => {
         // Check if any filter is being applied
         if (filters.length === 0) {
-        setFilteredPosts(allPosts);
+        setFilteredPosts(posts);
         }
         else {
         // filter by what is selected
