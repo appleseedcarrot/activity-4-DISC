@@ -22,18 +22,21 @@ export default function UsersSummary() {
         <div className={'users-summary'}>
             <h1 className={'user-heading'}> Users </h1>
             <div className={'user-brief'}>
-            {Users.slice(0,5).map((user) => {
-                return (
-                    <Link to={'/users/' + user.id}>
-                        <div className={'user'}>
-                            <img src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png" />
-                            <h2> {user.firstname} {user.lastname} </h2>
-                            <p> {user.graduationyear} </p> 
-                        </div>
-                    </Link>
-                )
-            }
-            )}
+                {Users.length === 0 ? (
+                    <h2> Loading... </h2>
+                ) : (
+                Users.slice(0,5).map((user) => {
+                    return (
+                        <Link to={'/users/' + user.id}>
+                            <div className={'user'}>
+                                <img src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png" />
+                                <h2> {user.firstname} {user.lastname} </h2>
+                                <p> {user.graduationyear} </p> 
+                            </div>
+                        </Link>
+                    )
+                }
+                ))}
             </div>
             <Link to="/users"> <button className="see-users"> See More Users </button> </Link>
         </div>
