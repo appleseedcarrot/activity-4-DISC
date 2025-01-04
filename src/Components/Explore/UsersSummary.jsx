@@ -9,7 +9,7 @@ export default function UsersSummary() {
     // Grab our users from the API
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('http://localhost:3005/users');
+            const response = await fetch('https://roomboard-db-git-main-appleseedcarrots-projects.vercel.app/api/users/');
             const data = await response.json();
             setUsers(data);
             console.log(data);

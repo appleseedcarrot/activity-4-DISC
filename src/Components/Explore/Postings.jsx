@@ -28,7 +28,7 @@ export default function Postings() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch("http://localhost:3005/posts");
+                const response = await fetch("https://roomboard-msr4tzu6j-appleseedcarrots-projects.vercel.app/api/users/");
                 const data = await response.json();
                 console.log(data);
                 setAllPosts(data); // Set the posts data
