@@ -12,7 +12,7 @@ export default function User() {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await fetch('http://localhost:3005/api/users/' + userID);
+                const response = await fetch('http://localhost:3005/users/' + userID);
                 const data = await response.json();
                 setUser(data[0]);
                 console.log(data);

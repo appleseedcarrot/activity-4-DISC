@@ -7,18 +7,7 @@ export default function Postings() {
     // Filters
     const [filters, setFilters] = useState([]);
     // Example Posts
-    const [allPosts, setallPosts] = useState([
-    { id: 1, category: 'Gaming'},
-    { id: 2, category: 'Natural'},
-    { id: 3, category: 'Modern'},
-    { id: 4, category: 'Futuristic'},
-    { id: 5, category: 'Natural'},
-    { id: 6, category: 'Natural'},
-    { id: 7, category: 'Gaming'},
-    { id: 8, category: 'Futuristic'},
-    { id: 9, category: 'Gaming'},
-    { id: 10, category: 'Natural'},
-    ]);
+    const [allPosts, setAllPosts] = useState([]);
     // The filtered posts
     const [filteredPosts, setFilteredPosts] = useState([allPosts]);
 
@@ -34,6 +23,21 @@ export default function Postings() {
         setFilters([...filters, filter]);
     }
     }
+
+    // Fetch the posts from the database
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch("http://localhost:3005/posts");
+                const data = await response.json();
+                console.log(data);
+                setAllPosts(data); // Set the posts data
+            } catch (error) {
+                console.error("Error fetching posts:", error);
+            }
+        };
+        fetchPosts();
+    }, []);
 
     // Change which listings are shown based on filter
     useEffect(() => {
@@ -64,7 +68,7 @@ export default function Postings() {
             <div id='postGrid'>
             {filteredPosts.map((listing) => {
                 return (
-                <Post filter={listing.category}> </Post>
+                <Post filter={listing.genre} description={listing.description} picture_url={listing.picture_url} key={listing.id}> </Post>
                 )
             })
             }

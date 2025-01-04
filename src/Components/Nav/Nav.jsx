@@ -10,7 +10,7 @@ export default function Nav() {
           <ul id="nav-links">
             <li> <a class="nav-link"> About </a> </li>
             <li> <Link to="/Explore" class="nav-link"> Explore </Link> </li>
-            <li> <a class="nav-link"> Get Started </a> </li>
+            <li> <Link to="/signin" class="nav-link"> Get Started </Link> </li>
           </ul>
         </nav>
         <hr></hr>

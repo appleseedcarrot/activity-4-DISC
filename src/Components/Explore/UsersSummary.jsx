@@ -9,7 +9,7 @@ export default function UsersSummary() {
     // Grab our users from the API
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('http://localhost:3005/api/users');
+            const response = await fetch('http://localhost:3005/users');
             const data = await response.json();
             setUsers(data);
             console.log(data);
@@ -24,7 +24,7 @@ export default function UsersSummary() {
             <div className={'user-brief'}>
             {Users.slice(0,5).map((user) => {
                 return (
-                    <Link to={'/users/' + user.id}>
+                    <Link to={'/users/' + user.id} key={user.id}> 
                         <div className={'user'}>
                             <img src={user.profilepictureurl != null ? user.profilepictureurl : "https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png"} />
                             <h2> {user.firstname} {user.lastname} </h2>
