@@ -1,12 +1,14 @@
-import { useState } from "react";
+
+import React from 'react';
+import { useState, ChangeEvent, FormEvent } from "react";
 
 export default function CreatePost() {
     // State for post information
-    const [category, setCategory] = useState("");
-    const [content, setContent] = useState("");
-    const [image, setImage] = useState(null);
+    const [category, setCategory] = useState<string>("");
+    const [content, setContent] = useState<string>("");
+    const [image, setImage] = useState<File | null>(null);
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
         // Get the auth token
@@ -19,7 +21,7 @@ export default function CreatePost() {
         if (image) formData.append("image", image);
 
         try {
-            const response = await fetch("http://localhost:3005/posts", {
+            const response = await fetch("https://roomboard-db.vercel.app/api/posts/", {
                 method: "POST",
                 headers: {
                     "Authorization": token ? `Bearer ${token}` : "",
@@ -37,6 +39,13 @@ export default function CreatePost() {
         } catch (error) {
             console.error("Error creating post:", error);
             alert("Error creating post. Please try again.");
+        }
+    };
+
+    // Change image when added to the input
+    const handleFileInput = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            setImage(e.target.files[0]);
         }
     };
 
@@ -70,7 +79,7 @@ export default function CreatePost() {
                     <label>Image:</label>
                     <input
                         type="file"
-                        onChange={(e) => setImage(e.target.files[0])}
+                        onChange={(e) => {handleFileInput}}
                     />
                 </div>
                 <button type="submit">Create Post</button>

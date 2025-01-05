@@ -9,24 +9,27 @@ export default function UpdateProfile() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        // Get the auth token
+
         const token = localStorage.getItem("authToken");
-        
-        // Prepare form data to send as multipart form data
         const formData = new FormData();
+
         formData.append("firstName", firstName);
         formData.append("lastName", lastName);
         formData.append("bio", bio);
-        if (image) formData.append("profilePicture", profilePicture);
+        if (profilePicture) formData.append("profilePicture", profilePicture);
 
+        for (let pair of formData.entries()) {
+            console.log('FormData entry:', pair[0], pair[1]);
+        }
+
+        // https://roomboard-db.vercel.app/api/users/profile
         try {
-            const response = await fetch("http://localhost:3005/api/users/profile", {
+            const response = await fetch("https://roomboard-db.vercel.app/api/users/profile", {
                 method: "PUT",
                 headers: {
                     "Authorization": token ? `Bearer ${token}` : "",
                 },
-                body: formData,
+                body: formData
             });
 
             const data = await response.json();
