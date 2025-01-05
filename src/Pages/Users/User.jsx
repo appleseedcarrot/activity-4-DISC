@@ -12,7 +12,7 @@ export default function User() {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await fetch('https://roomboard-gn3ub8dz1-appleseedcarrots-projects.vercel.app/api/users/profiles/' + userID);
+                const response = await fetch('https://roomboard-db.vercel.app/api/users/profiles/' + userID);
                 const data = await response.json();
                 setUser(data[0]);
                 console.log(data);

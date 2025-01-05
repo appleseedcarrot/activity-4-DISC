@@ -9,7 +9,7 @@ export default function Users() {
     // Grab our users from the API
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('https://roomboard-gn3ub8dz1-appleseedcarrots-projects.vercel.app/api/users/profiles');
+            const response = await fetch('https://roomboard-db.vercel.app/api/users/profiles/');
             const data = await response.json();
             setUsers(data);
             console.log(data);
@@ -30,7 +30,7 @@ export default function Users() {
             <div className={'users-all'}>
                 {Users.map((user) => {
                     return (
-                        <Link to={'/users/profiles/' + user.id} key={user.id}>
+                        <Link to={'/users/' + user.id} key={user.id}>
                             <div className={'user'}>
                                 <img src={user.profile_picture_url} />
                                 <h2> {user.first_name} {user.last_name} </h2>
