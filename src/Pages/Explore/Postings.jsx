@@ -9,7 +9,7 @@ export default function Postings() {
     // Example Posts
     const [allPosts, setAllPosts] = useState([]);
     // The filtered posts
-    const [filteredPosts, setFilteredPosts] = useState([allPosts]);
+    const [filteredPosts, setFilteredPosts] = useState([]);
 
     // Toggle filters
     const toggleFilter = (filter) => {
@@ -28,10 +28,11 @@ export default function Postings() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await fetch("https://roomboard-msr4tzu6j-appleseedcarrots-projects.vercel.app/api/users/");
+                const response = await fetch("https://roomboard-db.vercel.app/api/posts/");
                 const data = await response.json();
                 console.log(data);
                 setAllPosts(data); // Set the posts data
+                
             } catch (error) {
                 console.error("Error fetching posts:", error);
             }
@@ -43,17 +44,19 @@ export default function Postings() {
     useEffect(() => {
         // Check if any filter is being applied
         if (filters.length === 0) {
-        setFilteredPosts(allPosts);
+            setFilteredPosts(allPosts);
         }
         else {
-        // filter by what is selected
-        const updatedPosts = allPosts.filter((post) => 
-            filters.some((filter) => 
-            post.category === filter));
-        setFilteredPosts(updatedPosts);
+            // filter by what is selected
+            const updatedPosts = allPosts.filter((post) => 
+                filters.some((filter) => 
+                post.genre === filter));
+            setFilteredPosts(updatedPosts);
         }
-    }, [filters]
+    }, [filters, allPosts]
     );
+
+    console.log(allPosts);
 
     // For testing purposes, let's see when filters are added or removed
     useEffect(() => {
@@ -68,7 +71,7 @@ export default function Postings() {
             <div id='postGrid'>
             {filteredPosts.map((listing) => {
                 return (
-                <Post filter={listing.genre} description={listing.description} picture_url={listing.picture_url} key={listing.id}> </Post>
+                        <Post filter={listing.genre} description={listing.description} picture_url={listing.picture_url} user_id={listing.user_id} key={listing.id}/>
                 )
             })
             }

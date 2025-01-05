@@ -8,7 +8,7 @@ export default function Footer() {
           <li> <Link to="/"> Home </Link> </li>
           <li> <a> About </a> </li>
           <li> <Link to="/Explore"> Explore </Link> </li>
-          <li> <a> Sign In </a> </li>
+          <li> <Link to="/Signin" > Sign In </Link> </li>
         </ul>
         <p> Roomboard @ 2024 All rights reserved. </p>
       </div>

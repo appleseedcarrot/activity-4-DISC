@@ -9,7 +9,7 @@ export default function Users() {
     // Grab our users from the API
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('http://localhost:3005/api/users');
+            const response = await fetch('https://roomboard-gn3ub8dz1-appleseedcarrots-projects.vercel.app/api/users/profiles');
             const data = await response.json();
             setUsers(data);
             console.log(data);
@@ -30,11 +30,11 @@ export default function Users() {
             <div className={'users-all'}>
                 {Users.map((user) => {
                     return (
-                        <Link to={'/users/' + user.id}>
+                        <Link to={'/users/profiles/' + user.id} key={user.id}>
                             <div className={'user'}>
-                                <img src={user.profilepictureurl != null ? user.profilepictureurl : "https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png"} />
-                                <h2> {user.firstname} {user.lastname} </h2>
-                                <p> {user.graduationyear} </p> 
+                                <img src={user.profile_picture_url} />
+                                <h2> {user.first_name} {user.last_name} </h2>
+                                <p> {user.date_of_birth} </p> 
                             </div>
                         </Link>
                     )

@@ -1,4 +1,5 @@
 import './Homepage.css'
+import { Link } from 'react-router-dom'
 
 export default function Homepage() {
     
@@ -11,9 +12,9 @@ export default function Homepage() {
                 <li> <p>
                 The right roommate can be hard to find. With RoomBoard, you can find someone with similar living styles to you!
                 </p></li>
-                <li> <button className={"create-profile"}>
+                <li> <Link to="/signin"> <button className={"create-profile"}>
                 Create your Profile
-                </button></li>
+                </button> </Link> </li>
                 </ul>
             </div>
             <div className={'image-container'}>

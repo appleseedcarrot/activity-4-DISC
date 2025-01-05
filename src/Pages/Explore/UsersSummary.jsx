@@ -9,7 +9,7 @@ export default function UsersSummary() {
     // Grab our users from the API
     useEffect(() => {
         const fetchUsers = async () => {
-            const response = await fetch('https://roomboard-db-git-main-appleseedcarrots-projects.vercel.app/api/users/');
+            const response = await fetch('https://roomboard-db-git-main-appleseedcarrots-projects.vercel.app/api/users/profiles');
             const data = await response.json();
             setUsers(data);
             console.log(data);
@@ -26,16 +26,20 @@ export default function UsersSummary() {
                 return (
                     <Link to={'/users/' + user.id} key={user.id}> 
                         <div className={'user'}>
-                            <img src={user.profilepictureurl != null ? user.profilepictureurl : "https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png"} />
-                            <h2> {user.firstname} {user.lastname} </h2>
-                            <p> {user.class} </p> 
+                            <img src={user.profile_picture_url} />
+                            <h2> {user.first_name} {user.last_name} </h2>
+                            <p> {user.graduation_year} </p> 
                         </div>
                     </Link>
                 )
             }
             )}
             </div>
-            <Link to="/users"> <button className="see-users"> See More Users </button> </Link>
+            <div>
+                <Link to="/users"> <button className="see-users"> See More Users </button> </Link>
+                <Link to="/update-profile"> <button className="see-users"> Set up your profile </button></Link>
+            </div>
+            
         </div>
     );
 }

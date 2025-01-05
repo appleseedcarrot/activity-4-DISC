@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function CreatePost() {
     // State for post information
-    const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [content, setContent] = useState("");
     const [image, setImage] = useState(null);
@@ -15,7 +14,6 @@ export default function CreatePost() {
         
         // Prepare form data to send as multipart form data
         const formData = new FormData();
-        formData.append("title", title);
         formData.append("category", category);
         formData.append("content", content);
         if (image) formData.append("image", image);
@@ -47,16 +45,7 @@ export default function CreatePost() {
             <h1>Create a New Post</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Title:</label>
-                    <input
-                        type="text"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        required
-                    />
-                </div>
-                <div>
-                    <label>Category:</label>
+                    <label>Genre:</label>
                     <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}

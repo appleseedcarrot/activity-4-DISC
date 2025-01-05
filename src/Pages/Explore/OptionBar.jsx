@@ -1,4 +1,5 @@
 import './OptionBar.css'
+import { Link } from 'react-router-dom'
 
 export default function OptionBar({toggleFilter, filters}) {
 
@@ -24,7 +25,7 @@ export default function OptionBar({toggleFilter, filters}) {
           <option> Highest Rated </option>
           <option> Trending </option>
         </select>
-        <button id="create-post-button"> + Create Post </button>
+        <Link to="/create-post"> <button id="create-post-button"> + Create Post </button> </Link>
       </div>
     </div>
   );
