@@ -16,7 +16,7 @@ export default function SignInSignUp() {
         const endpoint = action === "signin" ? "/auth/signin" : "/auth/signup";
         console.log(action);
     
-        const response = await fetch("https://roomboard-db.vercel.app" + endpoint, {
+        const response = await fetch("https://roomboard-db.vercel.app/api" + endpoint, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
